@@ -6,8 +6,8 @@ if (isset($_SESSION['login'])) {
 
 } else {header('location: index.php');}
 
-
-
+$getQuerry = "SELECT * FROM packets";
+$result = mysqli_query($db, $getQuerry);
 
 
 ?>
@@ -26,13 +26,37 @@ if (isset($_SESSION['login'])) {
 
 <div class="container">
 
-    <form action="" method="post">
-        nazwa nowego pakietu:
-        <input type="text">
-        <input type="submit" value="add">
-        
-    </form>
-    
+    <table>
+      <tr>
+      <th>ID</th>
+      <th>Name</th>
+
+      </tr>
+
+
+<?php
+while ($row = mysqli_fetch_assoc($result)) {
+echo <<<tabela
+    <tr>
+    <td>{$row['id']}</td>
+    <td>{$row['name_packet']}</td>
+    <td><a href="">Delete</a></td>
+    <td><a href="">Export</a></td>
+    </tr>
+
+tabela;
+    }
+
+?>
+        <tr>
+            <td>+</td>
+            <td><input type="text"></td>
+            <td><a href="">ADD</a></td>
+            <td><a href="">Import</a></td>
+        </tr>
+
+    </table>
+
 </div>
 
 

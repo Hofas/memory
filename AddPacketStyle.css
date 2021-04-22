@@ -1,0 +1,41 @@
+* {
+    padding: 0;
+    margin: 0;
+    /*box-sizing: border-box;*/
+}
+
+body {
+
+    background: lightgray;
+    height: 94vh;
+    background-image: linear-gradient(120deg, #3498db,#8e44ad);
+}
+
+
+.container {
+    display: flex;
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+    margin-top: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+
+table {
+    text-align: center;
+    margin: auto;
+    font-size: 2em;
+    background: rgba(255,255,255,0.2);
+}
+
+table td {
+    padding: 20px;
+}
+
+
+table tr:nth-child(even) {
+    background: rgba(255,255,255,0.5);
+
+}

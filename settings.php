@@ -27,7 +27,7 @@ if (isset($_SESSION['login'])){
     <ul>
 
         <li>
-        <a href="addPacket.php">Add packet...</a>
+        <a href="addPacket.php">Add/Delete/Export/Import packet...</a>
         
         </li>
         <li>
