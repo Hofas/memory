@@ -1,0 +1,103 @@
+* {
+
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: montserrat;
+    box-sizing: border-box
+
+}
+
+body {
+
+    background: lightgray;
+    min-height: 100vh;
+    background-image: linear-gradient(120deg, #3498db,#8e44ad);
+}
+
+.container {
+
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 50px;
+
+}
+
+.header {
+
+    text-align: center;
+    margin-bottom: 100px;
+    font-size: 5em;
+    font-weight: bold;
+}
+
+li {
+
+    list-style: none;
+    font-size: 0.5em;
+    margin-top: 10px;
+    padding: 10px;
+    width: 350px;
+    text-align: right;
+    color: white;
+
+
+
+    background: linear-gradient(120deg, #3498db, #8e44ad,#3498db );
+    background-size: 200%;
+    outline: none;
+    transition: .5s;
+
+}
+
+ul {
+    font-size: 3em;
+
+}
+
+li select {
+    font-size: 1em;
+    background: transparent;
+    margin-left: 10px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+
+}
+#logOff {
+    color: white;
+    cursor: pointer;
+    display: inline;
+}
+
+#logoff_button {
+    /*display: inline-block;*/
+    /*border: 1px solid black;*/
+    /*padding: 10px;*/
+    /*width: 200px;*/
+    /*text-align: center;*/
+    /*color: white;*/
+
+    /*background: linear-gradient(120deg, #3498db, #8e44ad,#3498db );*/
+    /*background-size: 200%;*/
+    /*outline: none;*/
+    /*cursor: pointer;*/
+    /*transition: .5s;*/
+    /*border: 1px solid rgba(255,255,255,0.3);*/
+
+}
+
+/*#logoff_button:hover {*/
+/*    background-position: right;*/
+/*    font-size: 0.7em;*/
+/*    font-weight: bold;*/
+/*    letter-spacing: 10px;*/
+/*    box-shadow: #fff 0 0 15px;*/
+/*    border: none;*/
+
+/*}*/
+
+a {
+    color: white;
+
+}
