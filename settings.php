@@ -18,7 +18,7 @@ if (isset($_SESSION['login'])){
     <link rel="icon" href="images/brain.png">
     <title>Memory Settings</title>
 </head>
-<body>
+<body onload="startPage()">
 <div class="container">
     <div class="header">
         <p>Welcome <?php echo $user?> </p>
@@ -27,8 +27,13 @@ if (isset($_SESSION['login'])){
     <ul>
 
         <li>
+        <a href="addPacket.php">Add packet...</a>
+        
+        </li>
+        <li>
             Packet to Learn
             <select name="packet" id="packet">
+           
            <?php
            $query = "SELECT * FROM packets";
            $result = mysqli_query($db, $query);
@@ -36,8 +41,9 @@ if (isset($_SESSION['login'])){
                die ("query faild".mysqli_error($db));
            } else {
                while ($row = mysqli_fetch_assoc($result)) {
-                   echo "<option value=${row['name_packet']}>${row['name_packet']}</option>";
 
+                   echo "<option value=${row['name_packet']}>${row['name_packet']}</option>";
+                //    value=${row['name_packet']} ${row['name_packet']}
                }
            }
            ?>
@@ -87,7 +93,17 @@ if (isset($_SESSION['login'])){
 
 </div>
 <script type="text/javascript">
+    
     const packet = document.querySelector('#packet');
+
+    function startPage(){
+    
+    document.cookie = `packet=${packet.value}`
+    
+    
+    }
+    
+
     packet.addEventListener('change',()=>{
         console.log(packet.value);
         document.cookie = `packet=${packet.value}`;

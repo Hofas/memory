@@ -29,9 +29,11 @@ if (isset($_COOKIE['valid'])){
         $pass_hash = password_hash($pass, PASSWORD_DEFAULT);
 
         $queryInsert = "INSERT INTO users (user, mail , pass) VALUES ('$username', '$email', '$pass_hash')";
+                
         $result = mysqli_query($db, $queryInsert);
 
-    header('location: index.php');
+
+        header('location: index.php');
 
     }
 
