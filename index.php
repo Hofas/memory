@@ -1,5 +1,6 @@
 <?php
 session_start();
+setcookie("packet", "", time() - 3600);
 require "db.php";
 $emptyLogin = 0;
 $emptyPass = 0;
@@ -51,7 +52,8 @@ if (isset($_POST['login'])){
     <link rel="stylesheet" href="style.css">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <link rel="icon" href="images/brain.png">
-
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons"
+          rel="stylesheet">
     <title>Memory</title>
 </head>
 <body>
@@ -72,9 +74,10 @@ if (isset($_POST['login'])){
 
         <input type="password" name="pass" id="pass">
 
+
         <span data-placeholder="Password"></span>
         <p class="material-icons" id="eyePass">visibility_off</p>
-
+<!--            <p class="material-icons-sharp" id="eyePass">visibility_off</p>-->
 
     </div>
     <?php if ($emptyPass) {echo "<p class='emptyPass'>emptyPass</p>";

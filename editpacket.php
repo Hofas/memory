@@ -60,8 +60,9 @@ echo <<<tabela
 tabela;
 $id++;
  $last = $row['id'] +1;
-};
 
+};
+if (!isset($last)) {$last = 1;};
 echo <<<tabelaEnd
     <tr>
                 <td>{$last}</td>

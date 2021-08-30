@@ -8,15 +8,16 @@ if (isset($_SESSION['login'])){
 
 $query = "SELECT * FROM {$packet}";
 $result = mysqli_query($db, $query);
+$i=1;
 while ($row = mysqli_fetch_assoc($result)){
     $id = $row['id'];
     $pl = $_POST["plrow{$id}"];
     $en = $_POST["enrow{$id}"];
 
-    $queryUpdate = "UPDATE {$packet} SET pl = '{$pl}', en = '{$en}'  WHERE id = '{$id}'";
+    $queryUpdate = "UPDATE {$packet} SET id = '${i}', pl = '{$pl}', en = '{$en}'  WHERE id = '{$id}'";
 
     mysqli_query($db, $queryUpdate);
-
+$i++;
 
 
 }

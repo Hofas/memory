@@ -9,12 +9,18 @@ if (isset($_SESSION['login'])){
     $query = "SELECT * from {$packet}";
     $result = mysqli_query($db, $query);
     $rows = mysqli_num_rows($result);
+
     $i = rand(1,$rows);
+
+
     $query = "SELECT * from {$packet} WHERE id = {$i}";
     $result = mysqli_query($db, $query);
-    while ($row = mysqli_fetch_assoc($result)){
+
+        while ($row = mysqli_fetch_assoc($result)){
+
         $pl=$row['pl'];
         $en=$row['en'];
+
 
         $_SESSION['en'] = $en;
         $_SESSION['pl'] = $pl;
@@ -37,28 +43,34 @@ if (isset($_SESSION['login'])){
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="quiz.css">
-    <title>Memory</title>
+        <title>Memory</title>
 </head>
 <body>
 
 <div class="container">
-    <?php
 
-    ?>
     <div class="header">
     <?php echo "<h1> WELCOME ".$user." You start to learn from ".$packet."</h1>"; ?>
     </div>
     <div class="questionBox">
-        <p id="p_question"><?php echo "Co oznacza po Angielsku {$en} ?";?></p>
+        <p id="p_question"><?php echo "{$en}";?></p>
 
     </div>
     <div class="answerBox">
-        <form action="checkAnswer.php" method="post">
-            <label for="answers">
-                <input name="answer" type="text" placeholder="odpowiedz?" autofocus>
-            </label>
-            <input type="submit" value="Check">
-        </form>
+
+<!--        <form action="checkAnswer.php" method="post">-->
+<!--            <label for="answers">-->
+
+<!--                -->
+<!--                //if(isset($_SESSION['correctAnswer'])){-->
+<!--//                    $rightAnswer =  $_SESSION['correctAnswer'];-->
+<!--//                } else {$rightAnswer = '';};-->
+
+                 <input id='answer' name='answer' type='text' placeholder='odp' autofocus="true">
+
+<!--            </label>-->
+<!--            <input type="submit" value="Check">-->
+<!--        </form>-->
 
         <p id="answerP"><?php if (isset($_SESSION['score'])) {echo $_SESSION['score'];};?></p>
 
@@ -71,18 +83,21 @@ if (isset($_SESSION['login'])){
             ?></p>
 
 
-
+        <a id="logoff_button" href="settings.php">Exit</a>
 
     </div>
 
 
-    <a id="logoff_button" href="settings.php">Exit</a>
+
 </div>
 
 
 
 
 
-
+<script src="main.js"></script>
 </body>
+
+
+
 </html>

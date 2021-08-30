@@ -3,6 +3,7 @@ session_start();
 include "db.php";
 if (isset($_SESSION['login'])){
     $user = $_SESSION['login'];
+    $_SESSION['score'] = 0;
 } else {header('location: index.php');}
 
 ?>
@@ -27,7 +28,7 @@ if (isset($_SESSION['login'])){
     <ul>
 
         <li>
-        <a href="addPacket.php">Add/Delete/Export/Import packet...</a>
+        <a href="EIAD.php">Add/Delete/Export/Import packet...</a>
         
         </li>
         <li>
@@ -107,6 +108,7 @@ if (isset($_SESSION['login'])){
     packet.addEventListener('change',()=>{
         console.log(packet.value);
         document.cookie = `packet=${packet.value}`;
+        localStorage.setItem("packet",packet.value);
     })
 const logoff = document.querySelector('#logOff');
     logoff.addEventListener('click',()=>{
